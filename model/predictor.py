@@ -2,10 +2,10 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
 def load_model_and_features():
-    df = pd.read_csv('./dataset/heart.csv').dropna()
+    df = pd.read_csv('./dataset/heart-3.csv').dropna()
     df = pd.get_dummies(df, drop_first=True)
-    X = df.drop('target', axis=1)
-    y = df['target']
+    X = df.drop('HeartDisease', axis=1)
+    y = df['HeartDisease']
     rf = RandomForestClassifier(n_estimators=100, random_state=42)
     rf.fit(X, y)
     return rf, X.columns.tolist()

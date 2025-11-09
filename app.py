@@ -16,19 +16,17 @@ def index():
         else:
             form_data = request.form.to_dict()
             user_data = {
-                'age': int(request.form['age']),
-                'sex': int(request.form['sex']),
-                'cp': int(request.form['cp']),
-                'trestbps': int(request.form['trestbps']),
-                'chol': int(request.form['chol']),
-                'fbs': int(request.form['fbs']),
-                'restecg': int(request.form['restecg']),
-                'thalach': int(request.form['thalach']),
-                'exang': int(request.form['exang']),
-                'oldpeak': float(request.form['oldpeak']),
-                'slope': int(request.form['slope']),
-                'ca': int(request.form['ca']),
-                'thal': int(request.form['thal'])
+                'Age': int(request.form['age']),
+                'Sex': 1 if request.form['sex'] == '1' else 0,
+                'ChestPainType': request.form['chest_pain_type'],
+                'RestingBP': int(request.form['resting_bp']),
+                'Cholesterol': int(request.form['cholesterol']),
+                'FastingBS': int(request.form['fasting_bs']),
+                'RestingECG': request.form['resting_ecg'],
+                'MaxHR': int(request.form['max_hr']),
+                'ExerciseAngina': 1 if request.form['exercise_angina'] == 'Y' else 0,
+                'Oldpeak': float(request.form['oldpeak']),
+                'ST_Slope': request.form['st_slope']
             }
             label, risk = predict_heart_disease_rf(user_data)
             show_prediction = True

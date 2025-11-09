@@ -59,3 +59,24 @@ h2 {
     font-size: 0.98em;
     display: none;
 }
+
+/* Extra small devices */
+@media (max-width: 576px) {
+    .container {
+        padding: 15px 10px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    .form-label {
+        font-size: 0.9em;
+    }
+
+    .desc-tooltip {
+        min-width: 180px;
+        font-size: 0.85em;
+    }
+}
