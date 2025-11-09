@@ -1,4 +1,5 @@
-_pycache_
-Model-1.ipynb
+__pycache__/
+Model1.ipynb
 HealthCare.ipynb
+
 dataset/
