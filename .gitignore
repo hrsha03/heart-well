@@ -1,4 +1,7 @@
-/model
 Model1.ipynb
 HealthCare.ipynb
-/dataset
+tests/
+
+__pycache__/
+**/__pycache__/
+*.pyc

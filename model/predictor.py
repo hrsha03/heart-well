@@ -14,7 +14,12 @@ rf_model, feature_columns = load_model_and_features()
 
 def predict_heart_disease_rf(user_data):
     user_df = pd.DataFrame([user_data])
-    user_df = pd.get_dummies(user_df, drop_first=True)
+    # For a single-row input, using drop_first=True can remove the only present
+    # dummy column for a categorical variable (since there's only one level
+    # present). Create full dummies here (no drop_first) so reindexing against
+    # the training feature columns preserves the correct dummy for the user's
+    # category.
+    user_df = pd.get_dummies(user_df, drop_first=False)
     user_df = user_df.reindex(columns=feature_columns, fill_value=0)
     prediction = rf_model.predict(user_df)[0]
     risk_score = rf_model.predict_proba(user_df)[0][1]

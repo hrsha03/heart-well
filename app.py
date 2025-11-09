@@ -15,16 +15,17 @@ def index():
             show_prediction = False
         else:
             form_data = request.form.to_dict()
+            # Match the categorical values to the training dataset (dataset/heart-3.csv)
             user_data = {
                 'Age': int(request.form['age']),
-                'Sex': 1 if request.form['sex'] == '1' else 0,
+                'Sex': request.form['sex'],
                 'ChestPainType': request.form['chest_pain_type'],
                 'RestingBP': int(request.form['resting_bp']),
                 'Cholesterol': int(request.form['cholesterol']),
                 'FastingBS': int(request.form['fasting_bs']),
                 'RestingECG': request.form['resting_ecg'],
                 'MaxHR': int(request.form['max_hr']),
-                'ExerciseAngina': 1 if request.form['exercise_angina'] == 'Y' else 0,
+                'ExerciseAngina': request.form['exercise_angina'],
                 'Oldpeak': float(request.form['oldpeak']),
                 'ST_Slope': request.form['st_slope']
             }

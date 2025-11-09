@@ -26,18 +26,18 @@
             <label class="form-label">Sex <button type="button" class="desc-btn" onmouseenter="showDescription(event, 'Sex')" onmouseleave="hideDescription()">?</button></label>
             <select class="form-select" name="sex" required>
                 <option value="" disabled selected>- Select -</option>
-                <option value="1" {% if form_data.get('sex') == '1' %}selected{% endif %}>Male</option>
-                <option value="0" {% if form_data.get('sex') == '0' %}selected{% endif %}>Female</option>
+                <option value="1" {% if form_data.get('sex') == 'M' %}selected{% endif %}>Male</option>
+                <option value="0" {% if form_data.get('sex') == 'F' %}selected{% endif %}>Female</option>
             </select>
         </div>
         <div class="mb-3">
             <label class="form-label">Chest Pain Type <button type="button" class="desc-btn" onmouseenter="showDescription(event, 'ChestPainType')" onmouseleave="hideDescription()">?</button></label>
             <select class="form-select" name="chest_pain_type" required>
                 <option value="" disabled selected>- Select -</option>
-                <option value="ATA" {% if form_data.get('chest_pain_type') == 'TA' %}selected{% endif %}>Typical angina</option>
+                <option value="TA" {% if form_data.get('chest_pain_type') == 'TA' %}selected{% endif %}>Typical angina</option>
                 <option value="NAP" {% if form_data.get('chest_pain_type') == 'NAP' %}selected{% endif %}>Non-anginal pain</option>
                 <option value="ASY" {% if form_data.get('chest_pain_type') == 'ASY' %}selected{% endif %}>Asymptomatic</option>
-                <option value="TA" {% if form_data.get('chest_pain_type') == 'ATA' %}selected{% endif %}>Atypical angina</option>
+                <option value="ATA" {% if form_data.get('chest_pain_type') == 'ATA' %}selected{% endif %}>Atypical angina</option>
             </select>
         </div>
         <div class="mb-3">
