@@ -10,8 +10,12 @@ COPY . /app
 # Install the required Python packages
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Set environment variables for production
+ENV PYTHONUNBUFFERED=1
+ENV PORT=5000
+
 # Expose the port the app runs on
 EXPOSE 5000
 
-# Command to run the application
-CMD ["python", "app.py"]
+# Command to run the application using gunicorn for production
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
