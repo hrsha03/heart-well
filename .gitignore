@@ -1,26 +1,4 @@
-model/_pycache_/
+_pycache_
 Model-1.ipynb
 HealthCare.ipynb
-
-# Virtual environment
-venv/
-.env
-
-# Logs
-*.log
-*.tmp
-
-# Byte-compiled files
-__pycache__/
-*.py[cod]
-
-# IDE-specific files
-.vscode/
-.idea/
-
-# Dataset files
 dataset/
-
-# System files
-.DS_Store
-Thumbs.db
